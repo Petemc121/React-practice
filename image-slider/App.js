@@ -6,23 +6,24 @@ import bjj3 from './bjj3.jpg'
 
 function App() {
 
-    const [currentSlide, setSlide] = useState(1);
+    const [currentSlide, setSlide] = useState(0);
    
 
     const nextSlideHandler = () => {
-        if (currentSlide < 3)
+        if (currentSlide == 2)
         {
-        setSlide(currentSlide + 1);
+        setSlide(0);
+        } else 
+        if(currentSlide < 2)
+        {
+            setSlide(currentSlide + 1);
         }
 
     }
 
     const renderImageHandler = () => {
         const imageArray = [bjj1, bjj2, bjj3];
-        const slideImg = new Image();
-        slideImg.src = imageArray[currentSlide];
-
-        return slideImg;
+        return imageArray[currentSlide ]
     }
 
     const prevSlideHandler = () => {

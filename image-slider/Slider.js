@@ -7,8 +7,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 export default function Slider({renderImage, nextSlide, prevSlide}) {
     return (
         <div id="slider">
-            <FontAwesomeIcon id="right" nextSlide={nextSlide} class="arrowIcons" icon={faArrowRight} />
-            <FontAwesomeIcon id="left" prevSlide={prevSlide} class="arrowIcons" icon={faArrowLeft} />
+            <FontAwesomeIcon id="right" onClick={nextSlide} class="arrowIcons" icon={faArrowRight} />
+            <FontAwesomeIcon id="left" onClick={prevSlide} class="arrowIcons" icon={faArrowLeft} />
             <Slides renderImage={renderImage} nextSlide={nextSlide} prevSlide={prevSlide} />
         </div>
     )
