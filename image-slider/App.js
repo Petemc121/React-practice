@@ -19,21 +19,36 @@ function App() {
             setSlide(currentSlide + 1);
         }
 
+
+
     }
 
     const renderImageHandler = () => {
         const imageArray = [bjj1, bjj2, bjj3];
-        return imageArray[currentSlide ]
+        return imageArray[currentSlide]
+
+    }
+
+    const navigateImagesHandler = (e) => 
+    {
+        setSlide(parseInt(e.target.id));
     }
 
     const prevSlideHandler = () => {
-
+        if (currentSlide == 0)
+        {
+        setSlide(2);
+        } else 
+        if(currentSlide > 0)
+        {
+            setSlide(currentSlide - 1);
+        }
     }
 
 
 return (
     <div>
-        <Slider renderImage={renderImageHandler} prevSlide={prevSlideHandler} nextSlide={nextSlideHandler} />
+        <Slider navigateImages={navigateImagesHandler}  renderImage={renderImageHandler} prevSlide={prevSlideHandler} nextSlide={nextSlideHandler} />
     </div>
     
 )
